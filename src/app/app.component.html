@@ -1,0 +1,78 @@
+<main class="bg-surface-50 dark:bg-surface-950 min-h-screen max-w-5xl mx-auto p-4 pb-8">
+  <section>
+    <p-card>
+      <div class="row">
+        <div class="column">
+          <img [src]="images()[0].src" [alt]="images()[0].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(0)">
+          <img [src]="images()[8].src" [alt]="images()[8].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(8)">
+          <!-- <img [src]="images()[4].src" [alt]="images()[4].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(4)"> -->
+          <img [src]="images()[18].src" [alt]="images()[18].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(18)">
+          <img [src]="images()[12].src" [alt]="images()[12].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(12)">
+          <img [src]="images()[16].src" [alt]="images()[16].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(16)">
+        </div>
+        <div class="column">
+          <img [src]="images()[1].src" [alt]="images()[1].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(1)">
+          <img [src]="images()[5].src" [alt]="images()[5].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(5)">
+          <img [src]="images()[13].src" [alt]="images()[13].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(13)">
+          <img [src]="images()[16].src" [alt]="images()[16].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(16)">
+          <img [src]="images()[9].src" [alt]="images()[9].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(9)">
+        </div>
+        <div class="column">
+          <img [src]="images()[2].src" [alt]="images()[2].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(2)">
+          <img [src]="images()[6].src" [alt]="images()[6].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(6)">
+          <img [src]="images()[10].src" [alt]="images()[10].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(10)">
+          <!-- <img [src]="images()[14].src" [alt]="images()[14].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(14)"> -->
+          <img [src]="images()[18].src" [alt]="images()[18].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(18)">
+          <img [src]="images()[16].src" [alt]="images()[16].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(16)">
+        </div>
+        <div class="column">
+          <img [src]="images()[3].src" [alt]="images()[3].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(3)">
+          <img [src]="images()[7].src" [alt]="images()[7].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(7)">
+          <img [src]="images()[11].src" [alt]="images()[11].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(11)">
+          <img [src]="images()[15].src" [alt]="images()[15].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(15)">
+          <img [src]="images()[16].src" [alt]="images()[16].alt" loading="lazy" class="cursor-pointer" (click)="imageClick(16)">
+        </div>
+      </div>
+    </p-card>
+    <p-galleria
+      [value]="images()"
+      [(visible)]="displayCustom"
+      [(activeIndex)]="activeIndex"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '850px' }"
+      [numVisible]="7"
+      [circular]="true"
+      [fullScreen]="true"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+    >
+      <ng-template #item let-item>
+        <img [src]="item.src" [alt]="item.alt" class="galleria-img" />
+      </ng-template>
+    </p-galleria>
+  </section>
+  <footer class="sticky bottom-0 left-0 w-full pt-8">
+      <div class="rounded-2xl rounded-b-none bg-base-300/40 backdrop-blur-md flex flex-row flex-wrap justify-between text-center gap-2 p-4">
+        <div class="flex justify-center logo-container">
+          <logo [width]="48" [height]="48" class="bg-surface-50 dark:bg-surface-950 rounded-lg text-primary cursor-pointer" role="button" (click)="toggleDarkMode()" />
+        </div>
+        <div class="flex items-center justify-center gap-2 flex-wrap">
+          <p-chip class="py-1! pl-3! pr-2!">
+            <i class="pi pi-map-marker"></i>
+            <span class="mr-3">
+              Córdoba, B° Inaudi
+            </span>
+            <a
+              class="rounded-full w-8 h-8 flex items-center justify-center cursor-pointer overflow-hidden"
+              href="https://maps.app.goo.gl/ptDBWWqpLkvt5jDB9"
+              target="_blank"
+            >
+              <img src="map.png" alt="Acceso a la ubicación en maps" loading="lazy" class="w-full h-full">
+            </a>
+          </p-chip>
+          <p-chip label="133.000.- USD" icon="pi pi-dollar" />
+          <p-chip label="3516593544" icon="pi pi-whatsapp" />
+        </div>
+      </div>
+  </footer>
+</main>

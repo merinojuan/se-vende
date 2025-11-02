@@ -1,0 +1,12 @@
+@use './tailwind.css';
+@use "primeicons/primeicons.css";
+
+.p-galleria-items-container, .p-galleria-items {
+  position: static !important;
+}
+
+@media screen and (max-width: 600px) {
+  .p-galleria-mask .p-galleria-nav-button {
+    top: 95% !important;
+  }
+}
